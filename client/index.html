@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fullstack Prints</title>
+  </head>
+  <body>
+    <div>
+      <input type="file" id="input" />
+
+    </div>
+    <script>
+      const url = 'http://localhost:1337/products/cjv32mizq0091c9gl5967fedo/image'
+
+      this.input.addEventListener("change", handleFiles, false);
+      function handleFiles(e) {
+        // const formData = new FormData()
+        const file = e.target.files[0]
+        // formData.append('file', file)
+
+        fetch(url, {
+          method: 'POST',
+          body: file
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+          })
+          .catch(error => {
+            console.error(error)
+          })
+      }
+
+      function login() {
+        const url = 'http://localhost:1337/login'
+        fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            username: 'admin',
+            password: 'iamzach'
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+          })
+          .catch(error => {
+            console.error(error)
+          })
+      }
+
+      login()
+
+    </script>
+  </body>
+</html>
