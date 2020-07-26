@@ -10,7 +10,7 @@
 
     </div>
     <script>
-      const url = 'http://localhost:1337/products/cjv32mizq0091c9gl5967fedo/image'
+      const url = 'https://fullstack-printshop.herokuapp.com/products/cjv32mizq0091c9gl5967fedo/image'
 
       this.input.addEventListener("change", handleFiles, false);
       function handleFiles(e) {
@@ -32,7 +32,7 @@
       }
 
       function login() {
-        const url = 'http://localhost:1337/login'
+        const url = 'https://fullstack-printshop.herokuapp.com/login'
         fetch(url, {
           method: 'POST',
           headers: {
