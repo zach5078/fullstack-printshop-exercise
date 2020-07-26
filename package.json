@@ -25,10 +25,11 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js | pino-pretty"
+    "start": "node server.js | pino-pretty",
+    "build": "npm install"
   },
   "engines": {
-    "node": "12.x"
+    "node": "12.18.x"
   },
   "author": "",
   "license": "ISC"
