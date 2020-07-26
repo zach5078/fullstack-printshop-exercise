@@ -30,7 +30,8 @@
     "start": "node server.js | pino-pretty"
   },
   "engines": {
-    "node": "12.18.x"
+    "node": "12.18.2",
+    "npm": "6.14.5"
   },
   "author": "",
   "license": "ISC"
