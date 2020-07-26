@@ -11,13 +11,6 @@ const app = express()
 
 app.disable('x-powered-by')
 
-// First, all requests will run through middleware.cors(). 
-// Next, the request URL will be matched against our two route handlers. 
-// If no route handler matches the request URL, middleware.notFound() will run, 
-// but if there is, the corresponding route handler will be run. 
-// While that route handler is running, if there’s an error and next(err) is called, middleware.handleError() will run. 
-// Alternatively, if a route handler calls next() with no argument, middleware.notFound() will run.
-
 app.use(middleware.logger)
 app.use(middleware.cors)
 app.use(bodyParser.json())
