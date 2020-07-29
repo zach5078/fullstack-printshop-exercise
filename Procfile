@@ -1,1 +1,1 @@
-web: node server.js | pino-pretty
+web: node index.js | pino-pretty

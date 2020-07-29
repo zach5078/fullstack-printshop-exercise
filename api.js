@@ -8,7 +8,7 @@ const { checkHealth: dbCheckHealth } = require('./db')
 
 
 async function listProducts(req, res) {
-  const { limit = 5, offset = 0, tag } = req.query
+  const { limit = 5, offset = 0, tag = '' } = req.query
   res.json(await Products.list({
     limit: Number(limit), 
     offset: Number(offset),
@@ -86,13 +86,6 @@ async function uploadImage(req, res, next) {
   res.json(product)
 }
 
-async function showHomepage(req, res, next) {
-  const filename = `${__dirname}/client/index.html`
-  fs.createReadStream(filename)
-    .on('error', (err) => next(err))
-    .pipe(res)
-}
-
 async function createUser(req, res, next) {
   const user = await Users.create(req.body)
   const { username, email } = user || {}
@@ -144,7 +137,6 @@ module.exports = autoCatch({
   listOrders,
   getOrder,
   uploadImage,
-  showHomepage,
   createUser,
   deleteUser,
   listUsers,
