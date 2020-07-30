@@ -2,7 +2,4 @@
 npm-debug.log
 .DS_Store
 /*.env
-
-
-/client/build
 /client/node_modules
