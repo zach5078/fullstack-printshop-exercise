@@ -5,7 +5,7 @@ import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 
 import App from './client/src/App'
-const Products = require('./models/products')
+import Products from './models/products'
 
 async function renderHtml(req, res, next) {
   const filename = path.resolve('./client/build/index.html')
@@ -29,6 +29,6 @@ async function renderHtml(req, res, next) {
 }
 
 
-module.exports = {
+export {
   renderHtml
 }
