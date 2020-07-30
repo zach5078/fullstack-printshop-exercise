@@ -37,7 +37,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && npm install && ./node_modules/.bin/react-scripts build && cd ../ && node index.js | pino-pretty"
+    "start": "cd client && ./node_modules/.bin/react-scripts build && cd ../ && node index.js | pino-pretty"
   },
   "engines": {
     "node": "12.18.2",
