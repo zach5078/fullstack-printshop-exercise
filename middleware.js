@@ -9,7 +9,7 @@ function cors (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', origin || '*')
   res.setHeader(
     'Access-Control-Allow-Methods',
-    'POST, GET, PUT, DELETE, XMODIFY'
+    'POST, GET, PUT, DELETE, XMODIFY, OPTIONS'
   )
   res.setHeader('Access-Control-Allow-Credentials', 'true')
   res.setHeader('Access-Control-Max-Age', '86400')

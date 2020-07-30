@@ -20,6 +20,7 @@ app.use(cookieParser())
 
 // auth.setMiddleware(app) //only needed if we use auth-with-sessions
 
+app.options('*', api.handlePreflight)
 app.get('/', ssr.renderHtml)
 app.post('/api/login', auth.authenticate, auth.login)
 app.post('/api/users', api.createUser)

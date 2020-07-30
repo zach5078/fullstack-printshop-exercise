@@ -7,7 +7,7 @@ import ReactDOMServer from 'react-dom/server'
 import App from './client/src/App'
 import Products from './models/products'
 
-async function renderHtml(req, res, next) {
+export async function renderHtml(req, res, next) {
   const filename = path.resolve('./client/build/index.html')
   fs.readFile(filename, 'utf-8', async (err, data) => {
     if(err) {
@@ -26,9 +26,4 @@ async function renderHtml(req, res, next) {
       )
     )
   })
-}
-
-
-export {
-  renderHtml
 }

@@ -25,15 +25,11 @@ async function getProduct(req, res, next) {
 }
 
 async function createProduct(req, res, next) {
-  if(!req.isAdmin) return forbidden(next)
-
   const product = await Products.create(req.body)
   res.json(product)
 }
 
 async function editProduct(req, res, next) {
-  if(!req.isAdmin) return forbidden(next)
-
   const change = req.body
   const product = await Products.edit(req.params.id, change)
   res.json(product)
@@ -127,6 +123,10 @@ async function checkHealth (req, res, next) {
   res.json({ status: 'OK' })
 }
 
+async function handlePreflight(req, res) {
+  res.status(200).json({success: true})
+}
+
 module.exports = autoCatch({
   listProducts,
   getProduct,
@@ -141,5 +141,6 @@ module.exports = autoCatch({
   deleteUser,
   listUsers,
   editUser,
-  checkHealth
+  checkHealth,
+  handlePreflight
 })
